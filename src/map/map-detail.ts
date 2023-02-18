@@ -1,5 +1,19 @@
-import { Difficulty } from '@bsab/api/map/difficulty';
-import { IMapItem } from '@bsab/ui-kit/map-list-item/interface';
+import { Difficulty } from './difficulty';
+import { MapDiffiDetail } from './map';
+
+export interface IMapItem {
+  songName: string;
+  songSubName?: string;
+  songAuthorName?: string;
+  id: string;
+  coverURL: string;
+  author: string;
+  createdAt: string;
+  duration: number;
+  difsDetails: MapDiffiDetail[];
+
+  stats?: MapStat;
+}
 
 export interface DifficultyDetail {
   difficulty: Difficulty;
