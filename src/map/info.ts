@@ -1,5 +1,5 @@
-import { Difficulty, DifficultyRaw } from "@bsab/api/map/difficulty";
-import { MAP_MODE_CONVERT, MapMode } from "@bsab/api/map/map";
+import { Difficulty, DifficultyRaw } from "./difficulty";
+import { MAP_MODE_CONVERT, MapMode } from "./map";
 
 export interface MapDataInfo {
    version: string;

@@ -1,5 +1,5 @@
 import { Difficulty } from './difficulty';
-import { MapDiffiDetail } from './map';
+import { MapDiffiDetail } from "./map";
 
 export interface IMapItem {
   songName: string;
