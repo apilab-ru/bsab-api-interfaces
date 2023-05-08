@@ -23,6 +23,21 @@ export interface LocalMap {
 
   soundURL?: string;
   downloadURL?: string;
+
+  cinema?: MapCinema;
+}
+
+export interface MapCinema {
+   videoFile?: string;
+   videoID: string;
+   title: string;
+   author: string;
+   duration: number;
+   offset: number;
+   bundledConfig: boolean;
+   bloom: number; // 0.6
+
+   [key: string]: any;
 }
 
 export interface MapDiffiDetail {
