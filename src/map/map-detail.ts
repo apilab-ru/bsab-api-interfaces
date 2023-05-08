@@ -49,15 +49,17 @@ export interface MapDetail extends IMapItem {
   tags: number[];
   stats: MapStat;
   uploaded: Date;
-  //automapper: boolean;
-  //ranked: boolean;
-  //qualified: boolean;
   createdAt: string;
   updatedAt: string;
-  // lastPublishedAt: string;
   showed: boolean;
   // downloadURL: string;
   coverURL: string;
   soundURL: string;
-  sourceUrl: string;
+  downloadURL: string;
+}
+
+export interface MapDetailRaw extends MapDetail {
+   originalCoverURL: string;
+   originalSoundURL: string;
+   originalDownloadURL: string;
 }
