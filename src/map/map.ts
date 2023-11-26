@@ -37,6 +37,7 @@ export interface MapCinema {
    bundledConfig: boolean;
    bloom: number; // 0.6
 
+   // @ts-ignore
    [key: string]: any;
 
   cinema?: MapCinema;
@@ -52,6 +53,7 @@ export interface MapCinema {
    bundledConfig: boolean;
    bloom: number; // 0.6
 
+   // @ts-ignore
    [key: string]: any;
 }
 

@@ -7,6 +7,7 @@ export enum FilterKey {
    npsFrom = 'npsFrom',
    npsTo = 'npsTo',
    recommended = 'recommended',
+   ranked = 'ranked',
    scoreFrom = 'scoreFrom',
    search = 'search',
    showed = 'showed',
