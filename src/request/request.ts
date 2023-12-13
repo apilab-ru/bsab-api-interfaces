@@ -40,3 +40,8 @@ export enum OrderDirection {
    asc = 'asc',
    desc = 'desc',
 }
+
+export enum OrderDirectionDTO {
+   asc = 'ASC',
+   desc = 'DESC',
+}
