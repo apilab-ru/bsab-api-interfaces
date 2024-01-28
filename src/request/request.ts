@@ -1,6 +1,7 @@
 export enum FilterKey {
    bpmFrom = 'bpmFrom',
    bpmTo = 'bpmTo',
+   blRanked = 'blRanked',
    dateFrom = 'dateFrom',
    durationFrom = 'durationFrom',
    durationTo = 'durationTo',
