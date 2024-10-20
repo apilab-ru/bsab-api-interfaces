@@ -1,4 +1,4 @@
-import { Difficulty } from "./difficulty";
+import { Difficulty } from './difficulty';
 
 export interface LocalMap {
   id: string;
@@ -28,16 +28,16 @@ export interface LocalMap {
 }
 
 export interface MapCinema {
-   videoFile?: string;
-   videoID: string;
-   title: string;
-   author: string;
-   duration: number;
-   offset: number;
-   bundledConfig: boolean;
-   bloom: number; // 0.6
+  videoFile?: string;
+  videoID: string;
+  title: string;
+  author: string;
+  duration: number;
+  offset: number;
+  bundledConfig: boolean;
+  bloom: number; // 0.6
 
-   [key: string]: any;
+  [key: string]: any;
 }
 
 export interface MapDiffiDetail {
@@ -48,7 +48,7 @@ export interface MapDiffiDetail {
 export enum MapMode {
   degree90 = 'degree90',
   degree360 = 'degree360',
-  lawless ='lawless',
+  lawless = 'lawless',
   lightShow = 'lightShow',
   noArrows = 'noArrows',
   oneSaber = 'oneSaber',
@@ -56,13 +56,13 @@ export enum MapMode {
 }
 
 export const MAP_MODE_CONVERT = {
-   '90Degree': MapMode.degree90,
-   '360Degree': MapMode.degree360,
-   'Lawless': MapMode.lawless,
-   'Lightshow': MapMode.lightShow,
-   'NoArrows': MapMode.noArrows,
-   'OneSaber': MapMode.oneSaber,
-   'Standard': MapMode.standard
+  '90Degree': MapMode.degree90,
+  '360Degree': MapMode.degree360,
+  Lawless: MapMode.lawless,
+  Lightshow: MapMode.lightShow,
+  NoArrows: MapMode.noArrows,
+  OneSaber: MapMode.oneSaber,
+  Standard: MapMode.standard,
 };
 
 export interface MapDifficultList {
@@ -79,5 +79,5 @@ export interface MapDifficultInfo {
     r: number;
     g: number;
     b: number;
-  }
+  };
 }

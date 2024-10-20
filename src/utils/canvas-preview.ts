@@ -1,4 +1,4 @@
-import { PixelCrop } from 'react-image-crop'
+import { PixelCrop } from 'react-image-crop';
 
 const TO_RADIANS = Math.PI / 180;
 const MAX_SIZE = 512;
@@ -10,14 +10,14 @@ export async function canvasPreview(
   scale = 1,
   rotate = 0,
 ): Promise<string> {
-  const ctx = canvas.getContext('2d')
+  const ctx = canvas.getContext('2d');
 
   if (!ctx) {
-    throw new Error('No 2d context')
+    throw new Error('No 2d context');
   }
 
-  const scaleX = image.naturalWidth / image.width
-  const scaleY = image.naturalHeight / image.height
+  const scaleX = image.naturalWidth / image.width;
+  const scaleY = image.naturalHeight / image.height;
   // devicePixelRatio slightly increases sharpness on retina devices
   // at the expense of slightly slower render times and needing to
   // size the image back down if you want to download/upload and be
@@ -28,28 +28,28 @@ export async function canvasPreview(
   canvas.width = Math.floor(crop.width * scaleX * pixelRatio);
   canvas.height = Math.floor(crop.height * scaleY * pixelRatio);
 
-  ctx.scale(pixelRatio, pixelRatio)
-  ctx.imageSmoothingQuality = 'high'
+  ctx.scale(pixelRatio, pixelRatio);
+  ctx.imageSmoothingQuality = 'high';
 
-  const cropX = crop.x * scaleX
-  const cropY = crop.y * scaleY
+  const cropX = crop.x * scaleX;
+  const cropY = crop.y * scaleY;
 
-  const rotateRads = rotate * TO_RADIANS
-  const centerX = image.naturalWidth / 2
-  const centerY = image.naturalHeight / 2
+  const rotateRads = rotate * TO_RADIANS;
+  const centerX = image.naturalWidth / 2;
+  const centerY = image.naturalHeight / 2;
 
-  ctx.save()
+  ctx.save();
 
   // 5) Move the crop origin to the canvas origin (0,0)
-  ctx.translate(-cropX, -cropY)
+  ctx.translate(-cropX, -cropY);
   // 4) Move the origin to the center of the original position
-  ctx.translate(centerX, centerY)
+  ctx.translate(centerX, centerY);
   // 3) Rotate around the origin
-  ctx.rotate(rotateRads)
+  ctx.rotate(rotateRads);
   // 2) Scale the image
-  ctx.scale(scale, scale)
+  ctx.scale(scale, scale);
   // 1) Move the center of the image to the origin (0,0)
-  ctx.translate(-centerX, -centerY)
+  ctx.translate(-centerX, -centerY);
   ctx.drawImage(
     image,
     0,
@@ -60,7 +60,7 @@ export async function canvasPreview(
     0,
     image.naturalWidth,
     image.naturalHeight,
-  )
+  );
 
   ctx.restore();
 
