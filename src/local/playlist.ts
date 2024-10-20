@@ -10,7 +10,7 @@ export interface Playlist {
 }
 
 export interface PlaylistData extends Omit<Playlist, 'id'> {
-  id?: string;
+   id?: string;
 }
 
 export interface Song {

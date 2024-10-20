@@ -1,30 +1,30 @@
 import { Difficulty } from './difficulty';
 
 export interface LocalMap {
-  id: string;
-  coverURL: string;
-  songName: string;
-  songSubName: string;
-  songAuthorName: string;
-  author: string;
-  bpm: number;
-  createdAt: string;
+   id: string;
+   coverURL: string;
+   songName: string;
+   songSubName: string;
+   songAuthorName: string;
+   author: string;
+   bpm: number;
+   createdAt: string;
 
-  songFilename: string;
-  difsDetails: MapDiffiDetail[];
-  mods: MapMode[];
+   songFilename: string;
+   difsDetails: MapDiffiDetail[];
+   mods: MapMode[];
 
-  hash?: string;
+   hash?: string;
 
-  duration: number;
-  difficultMap: MapDifficultList[];
+   duration: number;
+   difficultMap: MapDifficultList[];
 
-  sourceUrl: string;
+   sourceUrl: string;
 
-  soundURL?: string;
-  downloadURL?: string;
+   soundURL?: string;
+   downloadURL?: string;
 
-  cinema?: MapCinema;
+   cinema?: MapCinema;
 }
 
 export interface MapCinema {
@@ -37,22 +37,39 @@ export interface MapCinema {
   bundledConfig: boolean;
   bloom: number; // 0.6
 
-  [key: string]: any;
+  // @ts-ignore
+   [key: string]: any;
+
+  cinema?: MapCinema;
+}
+
+export interface MapCinema {
+   videoFile?: string;
+   videoID: string;
+   title: string;
+   author: string;
+   duration: number;
+   offset: number;
+   bundledConfig: boolean;
+   bloom: number; // 0.6
+
+   // @ts-ignore
+   [key: string]: any;
 }
 
 export interface MapDiffiDetail {
-  difficulty: Difficulty;
-  nps: number;
+   difficulty: Difficulty;
+   nps: number;
 }
 
 export enum MapMode {
-  degree90 = 'degree90',
-  degree360 = 'degree360',
-  lawless = 'lawless',
-  lightShow = 'lightShow',
-  noArrows = 'noArrows',
-  oneSaber = 'oneSaber',
-  standard = 'standard',
+   degree90 = 'degree90',
+   degree360 = 'degree360',
+   lawless = 'lawless',
+   lightShow = 'lightShow',
+   noArrows = 'noArrows',
+   oneSaber = 'oneSaber',
+   standard = 'standard',
 }
 
 export const MAP_MODE_CONVERT = {
@@ -66,18 +83,18 @@ export const MAP_MODE_CONVERT = {
 };
 
 export interface MapDifficultList {
-  mode: MapMode;
-  list: MapDifficultInfo[];
+   mode: MapMode;
+   list: MapDifficultInfo[];
 }
 
 export interface MapDifficultInfo {
-  difficulty: Difficulty;
-  noteJumpMovementSpeed: number;
-  noteJumpStartBeatOffset: number;
-  file: string;
-  obstacleColor?: {
-    r: number;
-    g: number;
-    b: number;
-  };
+   difficulty: Difficulty;
+   noteJumpMovementSpeed: number;
+   noteJumpStartBeatOffset: number;
+   file: string;
+   obstacleColor?: {
+      r: number;
+      g: number;
+      b: number;
+   };
 }
